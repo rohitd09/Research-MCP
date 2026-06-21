@@ -9,6 +9,8 @@ ENV PYTHONUNBUFFERED=1
 # Default Port 8080
 ENV PORT=8080
 
+ENV FASTMCP_TRANSPORT_SECURITY__ALLOWED_HOSTS='["research-mcp-server-32764074468.asia-south1.run.app","localhost","127.0.0.1"]'
+
 # Set the working directory inside the container
 WORKDIR /app
 
