@@ -27,7 +27,12 @@ def search_arxiv(query: str, max_results: int = 5):
     Spanning computer science, physics and mathematics, quantitatives.
 
     This tool is to be used when the user needs highly formal proofs, 
-    deep methodologies, or academic context
+    deep methodologies, or academic context.
+
+    This tool takes multiple parameters:
+
+    1. query: The topic the user is interested in searching/learning for.
+    2. max_results: An integer value, determining how many papers to find and return
     """
     client = arxiv.Client()
     search = arxiv.Search(
