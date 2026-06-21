@@ -2,13 +2,17 @@ import os
 import asyncio
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 
 import arxiv
 from tavily import TavilyClient
 
 from pydantic import BaseModel
 
-mcp = FastMCP("Academic & Research Tool Server")
+mcp = FastMCP("Academic & Research Tool Server",
+            transport_security=TransportSecuritySettings(
+                enable_dns_rebinding_protection=False
+            ))
 
 class AcademicPaper(BaseModel):
     title: str
