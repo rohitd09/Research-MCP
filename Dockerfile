@@ -31,4 +31,4 @@ COPY server.py .
 EXPOSE 8080
 
 # Run the FastMCP server via stdio
-CMD ["python", "server.py"]
+CMD ["fastmcp", "run", "server.py", "--transport", "http", "--host", "0.0.0.0", "--port", "8080"]
