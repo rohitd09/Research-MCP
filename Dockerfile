@@ -6,6 +6,9 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
+# Default Port 8080
+ENV PORT=8080
+
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -23,6 +26,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the server code into the container
 # (Assumes your python file is named server.py)
 COPY server.py .
+
+# Inform Docker that the container listens on the specified port
+EXPOSE 8080
 
 # Run the FastMCP server via stdio
 CMD ["python", "server.py"]

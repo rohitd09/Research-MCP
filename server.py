@@ -114,4 +114,12 @@ def extract_webpage_content(url: str) -> dict:
     return response
 
 if __name__ == "__main__":
-    mcp.run()
+    port = int(os.getenv("PORT", 8080))
+    
+    asyncio.run(
+        mcp.run_async(
+            transport="streamable-http",
+            host="0.0.0.0",
+            port=port
+        )
+    )
